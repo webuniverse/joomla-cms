@@ -694,6 +694,8 @@ class Language
             // Try first without a language-prefixed filename.
             $filenames[] = "$path/$extension.ini";
             $filenames[] = "$path/$lang.$extension.ini";
+            $fallbackLang = substr($lang, 0,3) . strtoupper(substr($lang, 0,2));
+            $filenames[] = "$path/$fallbackLang.$extension.ini";
         }
 
         foreach ($filenames as $filename) {
